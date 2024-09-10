@@ -1,0 +1,105 @@
+form#commentform {
+	width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  .comment-notes, .comment-form-comment {width: 100%;}
+  .comment-form-author, .comment-form-email {width: 50%;}
+  .comment-form-cookies-consent {width: 75%;}
+  .form-submit {width: 25%;}
+  @media (max-width: 767px) {
+  	> * {width: 100%!important; padding-right: 0!important;}
+  }
+  > p {
+  	position: relative; padding-right: 30px;
+  	&:not(.comment-form-cookies-consent) > label {position: absolute; top: 0; left: 0; width: 0; height: 0; font-size: 0;}
+  	&.comment-notes {font-size: .7em;}
+  	> input[type=text], > input[type=email], > textarea, &.comment-form-cookies-consent label::before {
+  		padding: 0 8px; width: 100%; background: #fff; color: @text; font-family: monospace; font-size: .9em; line-height: 40px; border: 1px solid #aaa; border-radius: 4px;
+			@c: #999;
+	    &::-webkit-input-placeholder {color: @c; -ms-transition: all .2s linear; -o-transition: all .2s linear; -moz-transition: all .2s linear; -webkit-transition: all .2s linear; transition: all .2s linear;}
+	    &::-moz-placeholder {color: @c; -ms-transition: all .2s linear; -o-transition: all .2s linear; -moz-transition: all .2s linear; -webkit-transition: all .2s linear; transition: all .2s linear;}
+	    &:-ms-input-placeholder {color: @c; -ms-transition: all .2s linear; -o-transition: all .2s linear; -moz-transition: all .2s linear; -webkit-transition: all .2s linear; transition: all .2s linear;}
+	    &:-moz-placeholder {color: @c; -ms-transition: all .2s linear; -o-transition: all .2s linear; -moz-transition: all .2s linear; -webkit-transition: all .2s linear; transition: all .2s linear;}
+  	}
+  	> input {height: 40px;}
+  	> textarea {padding: 8px; height: calc(7em + 16px); line-height: 1em;}
+  	&.form-submit {
+  		text-align: right;
+  		> input[type=submit] {
+  			padding: 0 15px; background: #999; color: #fff; font-size: .9em; line-height: 40px; border: 0; border-radius: 4px;
+  			&:hover {background: @darkGreen;}
+  		}
+  		@media (max-width: 767px) {
+  			text-align: left;
+  			> input[type=submit] {font-size: .65em;}
+  		}
+  	}
+  	&.comment-form-cookies-consent {
+  		font-size: .7em;
+  		input {position: absolute; top: 0; left: 0; width: 0; height: 0;}
+  		label {
+  			position: relative; padding-left: 40px; cursor: pointer;
+  			&::before {position: absolute; top: 50%; left: 0; content: '\f00c'; display: block; margin-top: -15px; padding: 0; width: 30px; height: 30px; color: transparent; font-family: @fa; font-size: 1em; font-weight: @bold; line-height: 30px;  text-align: center;}
+  		}
+  		input:checked + label::before {color: @darkGreen;}
+  	}
+  }
+}
+
+.commentlist {
+	> li {
+		margin: 0 0 15px 0; padding: 20px 30px; background: @paleGray; border-radius: 3px;
+		> .children {
+			margin-top: 15px;
+			.reply a {padding: 5px; min-width: 0; height: auto; line-height: 1em;}
+			.comment-body {margin-bottom: 15px;}
+			> li {
+				margin: 0 0 15px 0; padding: 20px 30px; background: #fff; border-radius: 3px;
+				li {padding-left: 15px; border-width: 1px 0 0 1px; border-style: solid; border-color: #ccc;}
+			}
+		}
+		@media (max-width: 575px) {
+			padding: 10px 15px;
+			.children li {padding: 10px 15px;}
+		}
+	}
+	.comment-body {
+		width: 100%;
+	  display: -webkit-box;
+	  display: -webkit-flex;
+	  display: -ms-flexbox;
+	  display: flex;
+	  align-items: center;
+	  flex-wrap: wrap;
+	  font-size: .7em;
+	  > * {width: 100%;}
+	  .comment-author, .comment-meta {width: 50%; font-size: .8em;}
+	  .comment-author .fn {font-weight: @bold;}
+	  .comment-meta {text-align: right;}
+	  .reply {
+	  	text-align: right;
+	  	a {
+	  		display: inline-block; min-width: 80px; padding: 1px 10px; background: #999; color: #fff; font-size: .8em; text-align: center; border-radius: 3px;
+	  		&:hover {background: @darkGreen;}
+	  	}
+	  }
+	  p {margin: 0 0 10px 0;}
+	}
+}
+#cancel-comment-reply-link {
+	display: inline-block; padding: 11px 10px; background: #999; color: #fff; font-family: @font; font-size: .35em; font-weight: @bold; line-height: 1em; border-radius: 3px;
+	&:hover {background: @darkGreen;}
+}
+
+.excerpt .comments {
+	right: 0; bottom: 0;
+	span {color: #fff; font-family: @thicc; font-size: .8em; font-weight: @bold; z-index: 2;}
+	&::before {content: '\f075'; display: block; position: absolute; color: #ccc; font-family: @fa; font-size: 1.5em; font-weight: 900; z-index: 1; top: 50%; left: 50%; -webkit-transform: @centerCenter; -o-transform: @centerCenter; -ms-transform: @centerCenter; transform: @centerCenter; -ms-transition: all .2s linear; -o-transition: all .2s linear; -moz-transition: all .2s linear; -webkit-transition: all .2s linear; transition: all .2s linear;}
+	&:hover {
+		&::before {color: @darkGreen;}
+	}
+}

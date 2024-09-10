@@ -1,0 +1,110 @@
+@buGreen: #b1b885;
+@darkGreen: #363;
+@text: #333;
+@paleGray: #f2f2f2;
+
+@font: 'Bitter', sans-serif;
+@thicc: 'Gochi Hand', cursive;
+@fa: 'Font Awesome 5 Pro';
+@normal: 400;
+@bold: 700;
+
+@vCenter: translateY(-50%);
+@hCenter: translateX(-50%);
+@centerCenter: translateX(-50%) translateY(-50%);
+
+/* Base CSS Reset Below*/
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font-size:100%;font:inherit;padding:0;border:0;margin:0;vertical-align:baseline;box-sizing:border-box;}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}.clear{clear:both}.sticky {}.bypostauthor {}.wp-caption {}.wp-caption-text {}.gallery-caption {}.alignright{}.alignleft{}.aligncenter{}*{outline:0!important;}img {/*image-rendering:-moz-crisp-edges;image-rendering:-o-crisp-edges;*//*image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges;-ms-interpolation-mode:nearest-neighbor;*/}img, svg {display: inline-block; max-width: 100%; height: auto;}* {-webkit-font-smoothing: antialiased;}input, textarea, button {-webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-border-radius: 0; -moz-border-radius: 0; -o-border-radius: 0; border-radius: 0;}
+
+.vCenter {top: 50%; -webkit-transform: @vCenter; -o-transform: @vCenter; -ms-transform: @vCenter; transform: @vCenter;}
+.hCenter {left: 50%; -webkit-transform: @hCenter; -o-transform: @hCenter; -ms-transform: @hCenter; transform: @hCenter;}
+.centerCenter {top: 50%; left: 50%; -webkit-transform: @centerCenter; -o-transform: @centerCenter; -ms-transform: @centerCenter; transform: @centerCenter;}
+.relative {position: relative;}
+.absolute {position: absolute;}
+.textLeft {text-align: left;}
+.textRight {text-align: right;}
+.textCenter {text-align: center;}
+.cover {top: 0; right: 0; bottom: 0; left: 0;}
+.leftRight {right: 0; left: 0;}
+.topBottom {top: 0; bottom: 0;}
+.circle, .cta-btn.arrow > span {display: block; -webkit-border-radius: 100%; -moz-border-radius: 100%; -o-border-radius: 100%; border-radius: 100%; overflow: hidden;}
+.block {display: block;}
+.object {position: absolute; display: block; content: ' '; font-size: 0; line-height: 0;}
+.opacity0 {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; filter: alpha(opacity=0); -moz-opacity: 0; -khtml-opacity: 0; opacity: 0;}
+.font0 {font-size: 0;}
+
+#header, #footer, #blog {
+	.animate, a, input, button, .wp-caption {-ms-transition: all .2s linear; -o-transition: all .2s linear; -moz-transition: all .2s linear; -webkit-transition: all .2s linear; transition: all .2s linear;}
+}
+
+.row-eq-height {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+}
+
+.row {
+	margin: 0!important;
+	> * {padding: 0; position: relative;}
+}
+
+.spacer {width: 100%; height: 50px; content: ' ';}
+@media (max-width: 767px) {
+	.spacter {height: 30px;}
+}
+
+.container {max-width: 1199px;}
+
+a {
+	color: @darkGreen; text-decoration: none!important;
+	&:hover {color: @buGreen; text-decoration: none!important;}
+}
+
+strong, b, a {font-weight: @bold;}
+em, i {font-style: italic;}
+
+html {
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#336633+0,333333+100 */
+	background: rgb(51,102,51); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(51,102,51,1) 0%, rgba(51,51,51,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(51,102,51,1) 0%,rgba(51,51,51,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(51,102,51,1) 0%,rgba(51,51,51,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#336633', endColorstr='#333333',GradientType=0 ); /* IE6-9 */}
+
+body {
+	color: @text; font-family: @font; font-size: 23px; font-weight: @normal; overflow-x: hidden;
+	background-color: transparent; background-image: url('../../images/pizza-bu.png');
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal; line-height: 1.1em;
+	a {font-weight: normal;}
+	@media (max-width: 575px) {
+		line-height: 1em;
+	}
+}
+h1, h2, h3 {
+	margin-bottom: 25px; font-family: @thicc;
+	@media (max-width: 575px) {
+		margin-bottom: 15px;
+	}
+}
+h4, h5, h6 {margin-bottom: 5px;}
+h1 {font-size: 2.5em;}
+h2 {font-size: 2.25em;}
+h3 {font-size: 1.75em;}
+h4 {font-size: 1.5em; font-weight: @bold;}
+h5 {font-size: 1.25em; font-weight: @bold;}
+h6 {font-size: 1em; font-weight: @bold;}
+
+p, ul, ol {margin-bottom: 25px; font-size: 1em; line-height: 1.5em;}
+
+* > *:last-child {margin-bottom: 0;}
+
+@import "index.less";
+@import "header.less";
+@import "footer.less";
+@import "comments.less";
